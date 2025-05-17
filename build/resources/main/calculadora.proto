@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "calculadora";
+option java_multiple_files = true;
+
+package calculadora;
+
+service CalculadoraService {
+  rpc Somar (DoisNumeros) returns (Resultado);
+  rpc Subtrair (DoisNumeros) returns (Resultado);
+  rpc Multiplicar (DoisNumeros) returns (Resultado);
+  rpc Dividir (DoisNumeros) returns (Resultado);
+}
+
+message DoisNumeros {
+  double a = 1;
+  double b = 2;
+}
+
+message Resultado {
+  double valor = 1;
+}

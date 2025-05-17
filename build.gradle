@@ -50,3 +50,12 @@ targetCompatibility = '11'
 application {
     mainClass = 'server.CalculadoraGrpcServer'
 }
+
+sourceSets {
+    main {
+        java {
+            srcDirs += 'build/generated/source/proto/main/java'
+            srcDirs += 'build/generated/source/proto/main/grpc'
+        }
+    }
+}
