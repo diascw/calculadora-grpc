@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package calculadora;
+
+// serviço com quatro operações básicas
+service CalculadoraService {
+  rpc Somar (DoisNumeros) returns (Resultado);
+  rpc Subtrair (DoisNumeros) returns (Resultado);
+  rpc Multiplicar (DoisNumeros) returns (Resultado);
+  rpc Dividir (DoisNumeros) returns (Resultado);
+}
+
+// mensagem de entrada com dois valores
+message DoisNumeros {
+  double a = 1;
+  double b = 2;
+}
+
+// mensagem de saída com resultado
+message Resultado {
+  double valor = 1;
+}
